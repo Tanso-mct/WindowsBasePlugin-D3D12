@@ -1,0 +1,1 @@
+﻿#include "windows_base_plugin_d3d12/src/pch.h"
