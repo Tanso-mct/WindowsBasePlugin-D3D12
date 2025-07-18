@@ -7,7 +7,7 @@
 #include <string>
 #include <vector>
 
-namespace wb
+namespace wbp_d3d12
 {
     /*******************************************************************************************************************
      * Related to DirectX 12 Factory and Device
@@ -23,7 +23,8 @@ namespace wb
 
     WBP_D3D12_API void CreateDX12CommandQueue
     (
-        const Microsoft::WRL::ComPtr<ID3D12Device4> &device, Microsoft::WRL::ComPtr<ID3D12CommandQueue> &commandQueue
+        const Microsoft::WRL::ComPtr<ID3D12Device4> &device, 
+        Microsoft::WRL::ComPtr<ID3D12CommandQueue> &commandQueue
     );
 
     /*******************************************************************************************************************
