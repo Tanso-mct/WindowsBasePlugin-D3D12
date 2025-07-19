@@ -1,0 +1,1 @@
+﻿#include "windows_base_plugin_example_render/src/pch.h"
