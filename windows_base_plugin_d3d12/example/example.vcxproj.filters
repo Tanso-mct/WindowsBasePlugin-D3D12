@@ -92,6 +92,9 @@
     <ClInclude Include="include\window_d3d12_example\window.h">
       <Filter>ヘッダー ファイル\window_d3d12_example</Filter>
     </ClInclude>
+    <ClInclude Include="..\windows_base_plugin_d3d12\plugin_d3d12.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />

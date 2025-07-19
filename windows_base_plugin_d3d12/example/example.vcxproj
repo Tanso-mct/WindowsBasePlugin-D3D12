@@ -153,6 +153,7 @@
     <ClCompile Include="src\window_d3d12_example\window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\windows_base_plugin_d3d12\plugin_d3d12.h" />
     <ClInclude Include="include\scene_example\asset_group.h" />
     <ClInclude Include="include\scene_example\entities_factory.h" />
     <ClInclude Include="include\scene_example\scene.h" />
@@ -170,6 +171,9 @@
   <ItemGroup>
     <ProjectReference Include="..\windows_base\windows_base.vcxproj">
       <Project>{060ef2ce-203c-4ecc-bed7-5d4ffdb963fc}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\windows_base_plugin_d3d12\windows_base_plugin_d3d12.vcxproj">
+      <Project>{106f5cee-c641-46c1-821b-498ecd0a9860}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
