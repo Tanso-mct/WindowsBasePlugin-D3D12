@@ -150,6 +150,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="src\render_target_context.cpp" />
+    <ClCompile Include="src\window_d3d12_facade.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\d3d12_helpers.h" />
@@ -160,8 +161,10 @@
     <ClInclude Include="include\interfaces\fence_context.h" />
     <ClInclude Include="include\interfaces\render_target_context.h" />
     <ClInclude Include="include\interfaces\swap_chain_context.h" />
+    <ClInclude Include="include\interfaces\window_d3d12_facade.h" />
     <ClInclude Include="include\render_target_context.h" />
     <ClInclude Include="include\swap_chain_context.h" />
+    <ClInclude Include="include\window_d3d12_facade.h" />
     <ClInclude Include="src\pch.h" />
   </ItemGroup>
   <ItemGroup>

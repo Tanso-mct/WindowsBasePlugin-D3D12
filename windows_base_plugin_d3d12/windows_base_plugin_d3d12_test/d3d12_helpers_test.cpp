@@ -257,11 +257,13 @@ TEST(DxHelpers, CreateRenderTargetView)
     D3D_FEATURE_LEVEL featureLevel;
     wbp_d3d12::CreateDX12Device(device, featureLevel, factory);
 
-    ComPtr<ID3D12Resource> texture;
+    std::vector<ComPtr<ID3D12Resource>> buffers;
+    buffers.resize(1);
+
     const UINT width = 256;
     const UINT height = 256;
-    wbp_d3d12::CreateTexture2D(device, texture, width, height, DXGI_FORMAT_R8G8B8A8_UNORM, D3D12_RESOURCE_FLAG_ALLOW_RENDER_TARGET);
-    EXPECT_NE(texture.Get(), nullptr);
+    wbp_d3d12::CreateTexture2D(device, buffers[0], width, height, DXGI_FORMAT_R8G8B8A8_UNORM, D3D12_RESOURCE_FLAG_ALLOW_RENDER_TARGET);
+    EXPECT_NE(buffers[0].Get(), nullptr);
 
     ComPtr<ID3D12DescriptorHeap> rtvHeap;
     const UINT rtvDescriptorCount = 1; // Create 1 RTV
@@ -270,12 +272,7 @@ TEST(DxHelpers, CreateRenderTargetView)
     wbp_d3d12::CreateRenderTargetViewHeap(device, rtvDescriptorCount, rtvHeap, rtvDescriptorSize);
     EXPECT_NE(rtvHeap.Get(), nullptr);
 
-    // RTVを作成
-    D3D12_RENDER_TARGET_VIEW_DESC rtvDesc = {};
-    rtvDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
-    rtvDesc.ViewDimension = D3D12_RTV_DIMENSION_TEXTURE2D;
-
-    device->CreateRenderTargetView(texture.Get(), &rtvDesc, rtvHeap->GetCPUDescriptorHandleForHeapStart());
+    wbp_d3d12::CreateRenderTargetView(device, rtvDescriptorCount, buffers, rtvHeap, rtvDescriptorSize);
 }
 
 TEST(DxHelpers, CreateCommandAllocator)
@@ -320,8 +317,9 @@ TEST(DxHelpers, CreateDepthStencilViewHeap)
 
     ComPtr<ID3D12DescriptorHeap> dsvHeap;
     const UINT depthStencilCount = 1; // Create 1 DSV
+    UINT dsvDescriptorSize = 0;
 
-    wbp_d3d12::CreateDepthStencilViewHeap(device, depthStencilCount, dsvHeap);
+    wbp_d3d12::CreateDepthStencilViewHeap(device, depthStencilCount, dsvHeap, dsvDescriptorSize);
     EXPECT_NE(dsvHeap.Get(), nullptr);
 }
 
@@ -334,19 +332,23 @@ TEST(DxHelpers, CreateDepthStencilView)
     D3D_FEATURE_LEVEL featureLevel;
     wbp_d3d12::CreateDX12Device(device, featureLevel, factory);
 
-    ComPtr<ID3D12Resource> depthStencil;
+    std::vector<ComPtr<ID3D12Resource>> depthStencils;
+    depthStencils.resize(1);
+
     const UINT clientWidth = 800;
     const UINT clientHeight = 600;
 
-    wbp_d3d12::CreateDepthStencil(device, clientWidth, clientHeight, depthStencil);
-    EXPECT_NE(depthStencil.Get(), nullptr);
+    wbp_d3d12::CreateDepthStencil(device, clientWidth, clientHeight, depthStencils[0]);
+    EXPECT_NE(depthStencils[0].Get(), nullptr);
 
     ComPtr<ID3D12DescriptorHeap> dsvHeap;
     const UINT depthStencilCount = 1; // Create 1 DSV
-    wbp_d3d12::CreateDepthStencilViewHeap(device, depthStencilCount, dsvHeap);
+    UINT dsvDescriptorSize = 0;
+    wbp_d3d12::CreateDepthStencilViewHeap(device, depthStencilCount, dsvHeap, dsvDescriptorSize);
     EXPECT_NE(dsvHeap.Get(), nullptr);
 
-    wbp_d3d12::CreateDepthStencilView(device, depthStencil, dsvHeap);
+    // Create the DSV
+    wbp_d3d12::CreateDepthStencilView(device, depthStencilCount, depthStencils, dsvHeap, dsvDescriptorSize);
 }
 
 TEST(DxHelpers, CreateViewport)

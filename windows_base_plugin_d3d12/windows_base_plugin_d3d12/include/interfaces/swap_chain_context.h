@@ -16,6 +16,7 @@ namespace wbp_d3d12
         virtual Microsoft::WRL::ComPtr<IDXGISwapChain3> &GetSwapChain() = 0;
         virtual UINT &GetFrameCount() = 0;
         virtual UINT &GetFrameIndex() = 0;
+        virtual UINT &GetSyncInterval() = 0;
     };
 
 } // namespace wbp_d3d12

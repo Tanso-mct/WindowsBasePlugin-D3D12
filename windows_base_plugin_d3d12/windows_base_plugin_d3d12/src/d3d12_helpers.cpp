@@ -438,7 +438,7 @@ WBP_D3D12_API void wbp_d3d12::CreateDepthStencil
 WBP_D3D12_API void wbp_d3d12::CreateDepthStencilViewHeap
 (
     const ComPtr<ID3D12Device4> &device, 
-    const UINT &depthStencilCount, ComPtr<ID3D12DescriptorHeap> &dsvHeap
+    const UINT &depthStencilCount, ComPtr<ID3D12DescriptorHeap> &dsvHeap, UINT &dsvDescriptorSize
 ){
     HRESULT hr = E_FAIL;
 
@@ -462,23 +462,28 @@ WBP_D3D12_API void wbp_d3d12::CreateDepthStencilViewHeap
         wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
         wb::ThrowRuntimeError(err);
     }
+
+    // Get the descriptor size for DSV
+    dsvDescriptorSize = device->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_DSV);
 }
 
 WBP_D3D12_API void wbp_d3d12::CreateDepthStencilView
 (
-    const ComPtr<ID3D12Device4> &device, 
-    const ComPtr<ID3D12Resource> &depthStencil, ComPtr<ID3D12DescriptorHeap> dsvHeap
+    const Microsoft::WRL::ComPtr<ID3D12Device4> &device,
+    const UINT &descriptorCount, std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> &depthStencils,
+    const Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> &dsvHeap, UINT dsvDescriptorSize
 ){
-    D3D12_DEPTH_STENCIL_VIEW_DESC desc = {};
-    desc.Format = DXGI_FORMAT_D24_UNORM_S8_UINT;
-    desc.ViewDimension = D3D12_DSV_DIMENSION_TEXTURE2D;
-    desc.Flags = D3D12_DSV_FLAG_NONE;
+    CD3DX12_CPU_DESCRIPTOR_HANDLE dsvHandle(dsvHeap->GetCPUDescriptorHandleForHeapStart());
+    for (UINT i = 0; i < descriptorCount; i++)
+    {
+        D3D12_DEPTH_STENCIL_VIEW_DESC desc = {};
+        desc.Format = DXGI_FORMAT_D24_UNORM_S8_UINT;
+        desc.ViewDimension = D3D12_DSV_DIMENSION_TEXTURE2D;
+        desc.Flags = D3D12_DSV_FLAG_NONE;
 
-    device->CreateDepthStencilView
-    (
-        depthStencil.Get(), &desc, 
-        dsvHeap->GetCPUDescriptorHandleForHeapStart()
-    );
+        device->CreateDepthStencilView(depthStencils[i].Get(), &desc, dsvHandle);
+        dsvHandle.Offset(1, dsvDescriptorSize);
+    }
 }
 
 WBP_D3D12_API void wbp_d3d12::CreateViewport(D3D12_VIEWPORT &viewport, const UINT &clientWidth, const UINT &clientHeight)
@@ -1039,7 +1044,7 @@ WBP_D3D12_API void wbp_d3d12::ClearRenderTargetViews
     cmdList->ClearRenderTargetView(rtvHandle, clearColor, 0, nullptr);
 }
 
-WBP_D3D12_API void wbp_d3d12::ClearDepthStencilView
+WBP_D3D12_API void wbp_d3d12::ClearDepthStencilViews
 (
     const ComPtr<ID3D12GraphicsCommandList> &cmdList, 
     const ComPtr<ID3D12DescriptorHeap> &dsvHeap, const UINT &dsvIndex, const UINT &dsvDescriptorSize, 

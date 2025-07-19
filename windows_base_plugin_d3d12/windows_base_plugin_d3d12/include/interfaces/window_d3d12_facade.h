@@ -22,7 +22,7 @@ namespace wbp_d3d12
 
         virtual void SetBarrierToRenderTarget() = 0;
         virtual void SetBarrierToPresent() = 0;
-        virtual void SetRenderTarget() = 0;
+        virtual void SetRenderTarget(UINT depthStencilIndex) = 0;
 
         virtual ID3D12CommandAllocator *GetCommandAllocator() = 0;
         virtual ID3D12GraphicsCommandList *GetCommandList() = 0;

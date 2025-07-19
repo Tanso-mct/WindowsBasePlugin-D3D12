@@ -11,4 +11,5 @@ TEST(SwapChainContext, Get)
     EXPECT_EQ(swapChainContext->GetFrameCount(), 0);
     EXPECT_EQ(swapChainContext->GetFrameIndex(), 0);
     EXPECT_EQ(swapChainContext->GetSwapChain().Get(), nullptr);
+    EXPECT_EQ(swapChainContext->GetSyncInterval(), wbp_d3d12::DEFAULT_SYNC_INTERVAL);
 }

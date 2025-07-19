@@ -99,14 +99,14 @@ namespace wbp_d3d12
     WBP_D3D12_API void CreateDepthStencilViewHeap
     (
         const Microsoft::WRL::ComPtr<ID3D12Device4> &device, 
-        const UINT& depthStencilCount, Microsoft::WRL::ComPtr<ID3D12DescriptorHeap>& dsvHeap
+        const UINT& depthStencilCount, Microsoft::WRL::ComPtr<ID3D12DescriptorHeap>& dsvHeap, UINT& dsvDescriptorSize
     );
 
     WBP_D3D12_API void CreateDepthStencilView
     (
         const Microsoft::WRL::ComPtr<ID3D12Device4> &device,
-        const Microsoft::WRL::ComPtr<ID3D12Resource> &depthStencil,
-        Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> dsvHeap
+        const UINT &descriptorCount, std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> &depthStencils,
+        const Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> &dsvHeap, UINT dsvDescriptorSize
     );
 
     /*******************************************************************************************************************
@@ -255,7 +255,7 @@ namespace wbp_d3d12
         const FLOAT (&clearColor)[4]
     );
 
-    WBP_D3D12_API void ClearDepthStencilView
+    WBP_D3D12_API void ClearDepthStencilViews
     (
         const Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> &cmdList,
         const Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> &dsvHeap,

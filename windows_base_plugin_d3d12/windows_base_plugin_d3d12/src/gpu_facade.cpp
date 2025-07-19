@@ -22,17 +22,6 @@ wbp_d3d12::GPUFacade::GPUFacade()
 
         gpuContext.IsCreated() = true;
     }
-    else
-    {
-        std::string err = wb::CreateErrorMessage
-        (
-            __FILE__, __LINE__, __FUNCTION__,
-            { "GPUContext is already created. No need to create it again." }
-        );
-        wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
-        wb::ThrowRuntimeError(err);
-    }
 }
 
 void wbp_d3d12::GPUFacade::SetContext(std::unique_ptr<wb::IContext> context)

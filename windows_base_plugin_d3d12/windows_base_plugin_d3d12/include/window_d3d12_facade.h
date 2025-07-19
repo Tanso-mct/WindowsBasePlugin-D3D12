@@ -50,7 +50,7 @@ namespace wbp_d3d12
 
         virtual void SetBarrierToRenderTarget() override;
         virtual void SetBarrierToPresent() override;
-        virtual void SetRenderTarget() override;
+        virtual void SetRenderTarget(UINT depthStencilIndex) override;
 
         virtual ID3D12CommandAllocator *GetCommandAllocator() override;
         virtual ID3D12GraphicsCommandList *GetCommandList() override;

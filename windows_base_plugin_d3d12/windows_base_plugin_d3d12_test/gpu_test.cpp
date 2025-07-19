@@ -7,7 +7,7 @@
 
 TEST(GPUFacade, Create)
 {
-    // Get the shared facade factory from registry
+    // Get the gpu facade factory from registry
     wb::ISharedFacadeFactory &factory = wb::gSharedFacadeRegistry.GetFactory(wbp_d3d12::GPUFacadeID());
 
     // Create GPUFacade instance
