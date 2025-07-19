@@ -5,18 +5,18 @@
 
 namespace wbp_d3d12
 {
-    class WBP_D3D12_API SwapChainContext : public ISwapChainContext
+    class SwapChainContext : public ISwapChainContext
     {
     private:
         Microsoft::WRL::ComPtr<IDXGISwapChain3> swapChain_ = nullptr;
-        const UINT frameCount_;
+        UINT frameCount_ = 0;
         UINT frameIndex_ = 0;
 
     public:
-        SwapChainContext(UINT frameCount);
+        SwapChainContext() = default;
 
-        Microsoft::WRL::ComPtr<IDXGISwapChain3>& SwapChain() override { return swapChain_; }
-        const UINT& FrameCount() const override { return frameCount_; }
-        UINT& FrameIndex() override { return frameIndex_; }
+        Microsoft::WRL::ComPtr<IDXGISwapChain3>& GetSwapChain() override { return swapChain_; }
+        UINT& GetFrameCount() override { return frameCount_; }
+        UINT& GetFrameIndex() override { return frameIndex_; }
     };
 } // namespace wbp_d3d12

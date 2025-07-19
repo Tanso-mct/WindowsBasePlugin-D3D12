@@ -10,21 +10,25 @@ namespace wbp_d3d12
     class WBP_D3D12_API FenceContext : public wbp_d3d12::IFenceContext
     {
     private:
+        UINT fenceCount_ = 0;
         Microsoft::WRL::ComPtr<ID3D12Fence> fence_ = nullptr;
         std::vector<UINT64> fenceValues_;
         HANDLE fenceEvent_ = nullptr;
 
     public:
-        FenceContext(UINT frameCount);
+        FenceContext() = default;
         ~FenceContext() override;
 
         /***************************************************************************************************************
          * IFenceContext implementation
         /**************************************************************************************************************/
 
-        Microsoft::WRL::ComPtr<ID3D12Fence> &Fence() override { return fence_; }
-        std::vector<UINT64> &FenceValues() override { return fenceValues_; }
-        HANDLE &FenceEvent() override { return fenceEvent_; }
+        void SetFenceCount(UINT count) override { fenceCount_ = count; }
+        void Resize() override;
+
+        Microsoft::WRL::ComPtr<ID3D12Fence> &GetFence() override { return fence_; }
+        std::vector<UINT64> &GetFenceValues() override { return fenceValues_; }
+        HANDLE &GetFenceEvent() override { return fenceEvent_; }
     };
 
 } // namespace wbp_d3d12

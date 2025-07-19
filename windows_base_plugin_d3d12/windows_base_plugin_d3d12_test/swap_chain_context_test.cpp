@@ -5,12 +5,10 @@
 
 TEST(SwapChainContext, Get)
 {
-    const UINT frameCount = 2;
-    std::unique_ptr<wbp_d3d12::ISwapChainContext> swapChainContext 
-        = std::make_unique<wbp_d3d12::SwapChainContext>(frameCount);
+    std::unique_ptr<wbp_d3d12::ISwapChainContext> swapChainContext = std::make_unique<wbp_d3d12::SwapChainContext>();
 
     EXPECT_NE(swapChainContext, nullptr);
-    EXPECT_EQ(swapChainContext->FrameCount(), frameCount);
-    EXPECT_EQ(swapChainContext->FrameIndex(), 0);
-    EXPECT_EQ(swapChainContext->SwapChain().Get(), nullptr);
+    EXPECT_EQ(swapChainContext->GetFrameCount(), 0);
+    EXPECT_EQ(swapChainContext->GetFrameIndex(), 0);
+    EXPECT_EQ(swapChainContext->GetSwapChain().Get(), nullptr);
 }

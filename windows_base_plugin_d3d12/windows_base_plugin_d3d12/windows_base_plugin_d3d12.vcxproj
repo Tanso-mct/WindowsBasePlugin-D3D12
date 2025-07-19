@@ -150,7 +150,6 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="src\render_target_context.cpp" />
-    <ClCompile Include="src\swap_chain_context.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\d3d12_helpers.h" />

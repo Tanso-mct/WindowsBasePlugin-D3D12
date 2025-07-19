@@ -6,14 +6,16 @@
 TEST(FenceContext, Get)
 {
     const UINT frameCount = 2;
-    std::unique_ptr<wbp_d3d12::IFenceContext> fenceContext 
-        = std::make_unique<wbp_d3d12::FenceContext>(frameCount);
+    std::unique_ptr<wbp_d3d12::IFenceContext> fenceContext = std::make_unique<wbp_d3d12::FenceContext>();
+
+    fenceContext->SetFenceCount(frameCount);
+    fenceContext->Resize();
 
     EXPECT_NE(fenceContext, nullptr);
-    EXPECT_EQ(fenceContext->FenceValues().size(), frameCount);
-    EXPECT_EQ(fenceContext->FenceValues()[0], wbp_d3d12::INITIAL_FENCE_VALUE);
-    EXPECT_EQ(fenceContext->FenceValues()[1], wbp_d3d12::INITIAL_FENCE_VALUE);
+    EXPECT_EQ(fenceContext->GetFenceValues().size(), frameCount);
+    EXPECT_EQ(fenceContext->GetFenceValues()[0], wbp_d3d12::INITIAL_FENCE_VALUE);
+    EXPECT_EQ(fenceContext->GetFenceValues()[1], wbp_d3d12::INITIAL_FENCE_VALUE);
     
-    EXPECT_TRUE(fenceContext->Fence().Get() == nullptr);
-    EXPECT_TRUE(fenceContext->FenceEvent() == nullptr);
+    EXPECT_TRUE(fenceContext->GetFence().Get() == nullptr);
+    EXPECT_TRUE(fenceContext->GetFenceEvent() == nullptr);
 }

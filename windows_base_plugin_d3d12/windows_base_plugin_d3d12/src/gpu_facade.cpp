@@ -30,7 +30,7 @@ wbp_d3d12::GPUFacade::GPUFacade()
             { "GPUContext is already created. No need to create it again." }
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
         wb::ThrowRuntimeError(err);
     }
 }

@@ -33,9 +33,6 @@
     <ClCompile Include="src\render_target_context.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="src\swap_chain_context.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="src\fence_context.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>

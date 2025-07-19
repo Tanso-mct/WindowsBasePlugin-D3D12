@@ -43,7 +43,7 @@ WBP_D3D12_API void wbp_d3d12::CreateDX12Factory(ComPtr<IDXGIFactory4> &factory)
             { "Failed to create DXGI Factory: ", hrStr }
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
         wb::ThrowRuntimeError(err);
     }
 }
@@ -137,7 +137,7 @@ WBP_D3D12_API void wbp_d3d12::CreateDX12Device
             { "Failed to create D3D12 Device: ", hrStr }
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
         wb::ThrowRuntimeError(err);
     }
 }
@@ -164,7 +164,7 @@ WBP_D3D12_API void wbp_d3d12::CreateDX12CommandQueue
             { "Failed to create D3D12 Command Queue: ", hrStr }
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
         wb::ThrowRuntimeError(err);
     }
 }
@@ -183,7 +183,7 @@ WBP_D3D12_API void wbp_d3d12::SetName(const ComPtr<ID3D12Resource> &object, cons
             { "Failed to set name for D3D12 object: ", hrStr }
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
         wb::ThrowRuntimeError(err);
     }
 }
@@ -229,7 +229,7 @@ WBP_D3D12_API void wbp_d3d12::CreateSwapChain
             { "Failed to create DXGI Swap Chain: ", hrStr }
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
         wb::ThrowRuntimeError(err);
     }
 
@@ -245,7 +245,7 @@ WBP_D3D12_API void wbp_d3d12::CreateSwapChain
             { "Failed to cast IDXGISwapChain1 to IDXGISwapChain3: ", hrStr }
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
         wb::ThrowRuntimeError(err);
     }
 
@@ -275,7 +275,7 @@ WBP_D3D12_API void wbp_d3d12::ResizeSwapChain
             { "Failed to resize DXGI Swap Chain: ", hrStr }
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
         wb::ThrowRuntimeError(err);
     }
 
@@ -306,7 +306,7 @@ WBP_D3D12_API void wbp_d3d12::GetBuffersFromSwapChain
                 { "Failed to get buffer from DXGI Swap Chain: ", hrStr }
             );
             wb::ConsoleLogErr(err);
-            wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+            wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
             wb::ThrowRuntimeError(err);
         }
 
@@ -339,7 +339,7 @@ WBP_D3D12_API void wbp_d3d12::CreateRenderTargetViewHeap
             { "Failed to create D3D12 Render Target View Heap: ", hrStr }
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
         wb::ThrowRuntimeError(err);
     }
 
@@ -384,7 +384,7 @@ WBP_D3D12_API void wbp_d3d12::CreateCommandAllocator
             { "Failed to create D3D12 Command Allocator: ", hrStr }
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
         wb::ThrowRuntimeError(err);
     }
 }
@@ -430,7 +430,7 @@ WBP_D3D12_API void wbp_d3d12::CreateDepthStencil
             { "Failed to create D3D12 Depth Stencil: ", hrStr }
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
         wb::ThrowRuntimeError(err);
     }
 }
@@ -459,7 +459,7 @@ WBP_D3D12_API void wbp_d3d12::CreateDepthStencilViewHeap
             { "Failed to create D3D12 Depth Stencil View Heap: ", hrStr }
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
         wb::ThrowRuntimeError(err);
     }
 }
@@ -532,7 +532,7 @@ WBP_D3D12_API void wbp_d3d12::CreateBuffer
             { "Failed to create D3D12 Buffer: ", hrStr }
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
         wb::ThrowRuntimeError(err);
     }
 }
@@ -557,7 +557,7 @@ WBP_D3D12_API void wbp_d3d12::UpdateBuffer
             { "Failed to map D3D12 Buffer: ", hrStr }
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
     }
 
     // Copy the initial data to the buffer
@@ -601,7 +601,7 @@ WBP_D3D12_API void wbp_d3d12::CreateTexture2D
             { "Failed to create D3D12 Texture2D: ", hrStr }
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
         wb::ThrowRuntimeError(err);
     }
 }
@@ -640,7 +640,7 @@ WBP_D3D12_API UINT wbp_d3d12::GetDXGIFormatByteSize(const DXGI_FORMAT &format)
             { "Unsupported DXGI format: ", std::to_string(static_cast<int>(format)) }
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
         wb::ThrowRuntimeError(err);
     }
 
@@ -704,7 +704,7 @@ WBP_D3D12_API void wbp_d3d12::CreateCommandList
             { "Failed to create D3D12 Command List: ", hrStr }
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
         wb::ThrowRuntimeError(err);
     }
 
@@ -733,7 +733,7 @@ WBP_D3D12_API void wbp_d3d12::CreateFence
             { "Failed to create D3D12 Fence: ", hrStr }
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
         wb::ThrowRuntimeError(err);
     }
 }
@@ -749,7 +749,7 @@ WBP_D3D12_API void wbp_d3d12::CreateFenceEvent(HANDLE &fenceEvent)
             { "Failed to create fence event: "}
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
         wb::ThrowRuntimeError(err);
     }
 }
@@ -767,7 +767,7 @@ WBP_D3D12_API void wbp_d3d12::CloseFenceEvent(HANDLE &fenceEvent)
                 { "Failed to close fence event: " }
             );
             wb::ConsoleLogErr(err);
-            wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+            wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
             wb::ThrowRuntimeError(err);
         }
 
@@ -789,7 +789,7 @@ WBP_D3D12_API void wbp_d3d12::CloseCommand(const ComPtr<ID3D12GraphicsCommandLis
             { "Failed to close D3D12 Command List: ", hrStr }
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
         wb::ThrowRuntimeError(err);
     }
 }
@@ -814,7 +814,7 @@ WBP_D3D12_API void wbp_d3d12::ResetCommand
             { "Failed to reset D3D12 Command Allocator: ", hrStr }
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
         wb::ThrowRuntimeError(err);
     }
 
@@ -830,7 +830,7 @@ WBP_D3D12_API void wbp_d3d12::ResetCommand
             { "Failed to reset D3D12 Command List: ", hrStr }
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
         wb::ThrowRuntimeError(err);
     }
 }
@@ -866,7 +866,7 @@ WBP_D3D12_API void wbp_d3d12::WaitForGPU
             { "Failed to signal fence event", hrStr }
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err.c_str());
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err.c_str());
         wb::ThrowRuntimeError(err);
     }
 
@@ -883,7 +883,7 @@ WBP_D3D12_API void wbp_d3d12::WaitForGPU
             { "Failed to set event on fence completion: ", hrStr }
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
         wb::ThrowRuntimeError(err);
     }
 
@@ -915,7 +915,7 @@ WBP_D3D12_API void wbp_d3d12::WaitFrameForGPU
             { "Failed to signal command queue: ", hrStr }
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
         wb::ThrowRuntimeError(err);
     }
 
@@ -934,7 +934,7 @@ WBP_D3D12_API void wbp_d3d12::WaitFrameForGPU
                 { "Failed to set event on fence completion: ", hrStr }
             );
             wb::ConsoleLogErr(err);
-            wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+            wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
             wb::ThrowRuntimeError(err);
         }
 
@@ -975,7 +975,7 @@ WBP_D3D12_API void wbp_d3d12::SetRenderTargets
             { "Render Target View Heap is null." }
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
         wb::ThrowRuntimeError(err);
     }
 
@@ -987,7 +987,7 @@ WBP_D3D12_API void wbp_d3d12::SetRenderTargets
             { "Depth Stencil View Heap is null." }
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
         wb::ThrowRuntimeError(err);
     }
 
@@ -1009,7 +1009,7 @@ WBP_D3D12_API void wbp_d3d12::SetRenderTargets
             { "Render Target View Heap is null." }
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
         wb::ThrowRuntimeError(err);
     }
 
@@ -1031,7 +1031,7 @@ WBP_D3D12_API void wbp_d3d12::ClearRenderTargetViews
             { "Render Target View Heap is null." }
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
         wb::ThrowRuntimeError(err);
     }
     
@@ -1053,7 +1053,7 @@ WBP_D3D12_API void wbp_d3d12::ClearDepthStencilView
             { "Depth Stencil View Heap is null." }
         );
         wb::ConsoleLogErr(err);
-        wb::ErrorNotify("WindowsBasePlugin-D3D12", err);
+        wb::ErrorNotify("WINDOWS_BASE_PLUGIN_D3D12", err);
         wb::ThrowRuntimeError(err);
     }
 

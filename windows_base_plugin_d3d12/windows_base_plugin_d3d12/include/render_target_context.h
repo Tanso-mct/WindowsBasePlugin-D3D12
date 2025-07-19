@@ -11,12 +11,12 @@ namespace wbp_d3d12
         std::vector<Microsoft::WRL::ComPtr<ID3D12CommandAllocator>> commandAllocators_;
         std::vector<Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList>> commandLists_;
 
-        const UINT renderTargetCount_;
+        UINT renderTargetCount_ = 0;
         std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> renderTargets_;
         Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> rtvDescriptorHeap_ = nullptr;
         UINT rtvDescriptorSize_ = 0;
 
-        const UINT depthStencilCount_;
+        UINT depthStencilCount_ = 0;
         std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> depthStencils_;
         Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> dsvDescriptorHeap_ = nullptr;
         UINT dsvDescriptorSize_ = 0;
@@ -25,28 +25,32 @@ namespace wbp_d3d12
         D3D12_RECT scissorRect_;
 
     public:
-        RenderTargetContext(UINT renderTargetCount, UINT depthStencilCount);
+        RenderTargetContext() = default;
         ~RenderTargetContext() override = default;
 
         /***************************************************************************************************************
          * IRenderTargetContext implementation
         /**************************************************************************************************************/
 
-        std::vector<Microsoft::WRL::ComPtr<ID3D12CommandAllocator>> &CommandAllocators() override { return commandAllocators_; }
-        std::vector<Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList>> &CommandLists() override { return commandLists_; }
+        void SetRenderTargetCount(UINT count) override { renderTargetCount_ = count; }
+        void SetDepthStencilCount(UINT count) override { depthStencilCount_ = count; }
+        void Resize() override;
 
-        const UINT &RenderTargetCount() const override { return renderTargetCount_; }
-        std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> &RenderTargets() override { return renderTargets_; }
-        Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> &RtvDescriptorHeap() override { return rtvDescriptorHeap_; }
-        UINT &RtvDescriptorSize() override { return rtvDescriptorSize_; }
+        std::vector<Microsoft::WRL::ComPtr<ID3D12CommandAllocator>> &GetCommandAllocators() override { return commandAllocators_; }
+        std::vector<Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList>> &GetCommandLists() override { return commandLists_; }
 
-        const UINT &DepthStencilCount() const override { return depthStencilCount_; }
-        std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> &DepthStencils() override { return depthStencils_; }
-        Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> &DsvDescriptorHeap() override { return dsvDescriptorHeap_; }
-        UINT &DsvDescriptorSize() override { return dsvDescriptorSize_; }
+        const UINT &GetRenderTargetCount() const override { return renderTargetCount_; }
+        std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> &GetRenderTargets() override { return renderTargets_; }
+        Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> &GetRtvDescriptorHeap() override { return rtvDescriptorHeap_; }
+        UINT &GetRtvDescriptorSize() override { return rtvDescriptorSize_; }
 
-        D3D12_VIEWPORT& ViewPort() override { return viewPort_; }
-        D3D12_RECT& ScissorRect() override { return scissorRect_; }
+        const UINT &GetDepthStencilCount() const override { return depthStencilCount_; }
+        std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> &GetDepthStencils() override { return depthStencils_; }
+        Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> &GetDsvDescriptorHeap() override { return dsvDescriptorHeap_; }
+        UINT &GetDsvDescriptorSize() override { return dsvDescriptorSize_; }
+
+        D3D12_VIEWPORT& GetViewPort() override { return viewPort_; }
+        D3D12_RECT& GetScissorRect() override { return scissorRect_; }
     };
 
 } // namespace wbp_d3d12

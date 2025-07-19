@@ -11,9 +11,12 @@ namespace wbp_d3d12
     public:
         virtual ~IFenceContext() = default;
 
-        virtual Microsoft::WRL::ComPtr<ID3D12Fence> &Fence() = 0;
-        virtual std::vector<UINT64> &FenceValues() = 0;
-        virtual HANDLE &FenceEvent() = 0;
+        virtual void SetFenceCount(UINT count) = 0;
+        virtual void Resize() = 0;
+
+        virtual Microsoft::WRL::ComPtr<ID3D12Fence> &GetFence() = 0;
+        virtual std::vector<UINT64> &GetFenceValues() = 0;
+        virtual HANDLE &GetFenceEvent() = 0;
     };
 
 } // namespace wbp_d3d12

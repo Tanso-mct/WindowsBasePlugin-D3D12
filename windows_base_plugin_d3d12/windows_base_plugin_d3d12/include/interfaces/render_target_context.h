@@ -13,21 +13,25 @@ namespace wbp_d3d12
     public:
         virtual ~IRenderTargetContext() = default;
 
-        virtual std::vector<Microsoft::WRL::ComPtr<ID3D12CommandAllocator>> &CommandAllocators() = 0;
-        virtual std::vector<Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList>> &CommandLists() = 0;
+        virtual void SetRenderTargetCount(UINT count) = 0;
+        virtual void SetDepthStencilCount(UINT count) = 0;
+        virtual void Resize() = 0;
 
-        virtual const UINT &RenderTargetCount() const = 0;
-        virtual std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> &RenderTargets() = 0;
-        virtual Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> &RtvDescriptorHeap() = 0;
-        virtual UINT &RtvDescriptorSize() = 0;
+        virtual std::vector<Microsoft::WRL::ComPtr<ID3D12CommandAllocator>> &GetCommandAllocators() = 0;
+        virtual std::vector<Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList>> &GetCommandLists() = 0;
 
-        virtual const UINT &DepthStencilCount() const = 0;
-        virtual std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> &DepthStencils() = 0;
-        virtual Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> &DsvDescriptorHeap() = 0;
-        virtual UINT &DsvDescriptorSize() = 0;
+        virtual const UINT &GetRenderTargetCount() const = 0;
+        virtual std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> &GetRenderTargets() = 0;
+        virtual Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> &GetRtvDescriptorHeap() = 0;
+        virtual UINT &GetRtvDescriptorSize() = 0;
 
-        virtual D3D12_VIEWPORT& ViewPort() = 0;
-        virtual D3D12_RECT& ScissorRect() = 0;
+        virtual const UINT &GetDepthStencilCount() const = 0;
+        virtual std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> &GetDepthStencils() = 0;
+        virtual Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> &GetDsvDescriptorHeap() = 0;
+        virtual UINT &GetDsvDescriptorSize() = 0;
+
+        virtual D3D12_VIEWPORT& GetViewPort() = 0;
+        virtual D3D12_RECT& GetScissorRect() = 0;
     };
 
 } // namespace wbp_d3d12

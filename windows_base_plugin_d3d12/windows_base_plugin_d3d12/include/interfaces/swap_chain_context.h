@@ -13,9 +13,9 @@ namespace wbp_d3d12
     public:
         virtual ~ISwapChainContext() = default;
 
-        virtual Microsoft::WRL::ComPtr<IDXGISwapChain3> &SwapChain() = 0;
-        virtual const UINT& FrameCount() const = 0;
-        virtual UINT &FrameIndex() = 0;
+        virtual Microsoft::WRL::ComPtr<IDXGISwapChain3> &GetSwapChain() = 0;
+        virtual UINT &GetFrameCount() = 0;
+        virtual UINT &GetFrameIndex() = 0;
     };
 
 } // namespace wbp_d3d12
