@@ -1,5 +1,5 @@
-﻿#include "windows_base_plugin_example_render/src/pch.h"
-#include "windows_base_plugin_example_render/include/system_example_render.h"
+﻿#include "wbp_example_render/src/pch.h"
+#include "wbp_example_render/include/system_example_render.h"
 
 #include "windows_base_plugin_d3d12/plugin.h"
 #pragma comment(lib, "windows_base_plugin_d3d12.lib")
@@ -92,7 +92,7 @@ void wbp_example_render::ExampleRenderSystem::Update(const wb::SystemArgument &a
                 { "GPUContext is not created. Please initialize GPUContext before using it." }
             );
             wb::ConsoleLog(err);
-            wb::ErrorNotify("WINDOWS_BASE_PLUGIN_EXAMPLE_RENDER", err);
+            wb::ErrorNotify("WBP_EXAMPLE_RENDER", err);
             wb::ThrowRuntimeError(err);
         }
 

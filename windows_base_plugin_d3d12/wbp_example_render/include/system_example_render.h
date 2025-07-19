@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "windows_base_plugin_example_render/include/dll_config.h"
+#include "wbp_example_render/include/dll_config.h"
 #include "windows_base/windows_base.h"
 
 namespace wbp_example_render
