@@ -148,12 +148,15 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\render_target_context.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\d3d12_helpers.h" />
     <ClInclude Include="include\dll_config.h" />
     <ClInclude Include="include\gpu_context.h" />
     <ClInclude Include="include\gpu_facade.h" />
+    <ClInclude Include="include\interfaces\render_target_context.h" />
+    <ClInclude Include="include\render_target_context.h" />
     <ClInclude Include="src\pch.h" />
   </ItemGroup>
   <ItemGroup>

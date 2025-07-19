@@ -11,10 +11,10 @@ namespace wbp_d3d12
     class WBP_D3D12_API GPUContext : public wb::IContext
     {
     private:
-        bool isCreated = false;
-        Microsoft::WRL::ComPtr<IDXGIFactory4> factory;
-        Microsoft::WRL::ComPtr<ID3D12Device4> device;
-        Microsoft::WRL::ComPtr<ID3D12CommandQueue> commandQueue;
+        bool isCreated_ = false;
+        Microsoft::WRL::ComPtr<IDXGIFactory4> factory_;
+        Microsoft::WRL::ComPtr<ID3D12Device4> device_;
+        Microsoft::WRL::ComPtr<ID3D12CommandQueue> commandQueue_;
         D3D_FEATURE_LEVEL featureLevel = D3D_FEATURE_LEVEL_12_0; 
 
         // Singleton pattern
@@ -27,10 +27,10 @@ namespace wbp_d3d12
 
         static GPUContext& GetInstance();
 
-        bool& IsCreated() { return isCreated; }
-        Microsoft::WRL::ComPtr<IDXGIFactory4>& GetFactory() { return factory; }
-        Microsoft::WRL::ComPtr<ID3D12Device4>& GetDevice() { return device; }
-        Microsoft::WRL::ComPtr<ID3D12CommandQueue>& GetCommandQueue() { return commandQueue; }
+        bool& IsCreated() { return isCreated_; }
+        Microsoft::WRL::ComPtr<IDXGIFactory4>& GetFactory() { return factory_; }
+        Microsoft::WRL::ComPtr<ID3D12Device4>& GetDevice() { return device_; }
+        Microsoft::WRL::ComPtr<ID3D12CommandQueue>& GetCommandQueue() { return commandQueue_; }
         D3D_FEATURE_LEVEL& GetFeatureLevel() { return featureLevel; }
     };
 
