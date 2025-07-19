@@ -142,6 +142,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\d3d12_helpers.cpp" />
+    <ClCompile Include="src\fence_context.cpp" />
     <ClCompile Include="src\gpu_context.cpp" />
     <ClCompile Include="src\gpu_facade.cpp" />
     <ClCompile Include="src\pch.cpp">
@@ -154,8 +155,10 @@
   <ItemGroup>
     <ClInclude Include="include\d3d12_helpers.h" />
     <ClInclude Include="include\dll_config.h" />
+    <ClInclude Include="include\fence_context.h" />
     <ClInclude Include="include\gpu_context.h" />
     <ClInclude Include="include\gpu_facade.h" />
+    <ClInclude Include="include\interfaces\fence_context.h" />
     <ClInclude Include="include\interfaces\render_target_context.h" />
     <ClInclude Include="include\interfaces\swap_chain_context.h" />
     <ClInclude Include="include\render_target_context.h" />
