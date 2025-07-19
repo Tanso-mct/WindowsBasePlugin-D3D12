@@ -14,7 +14,7 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="ヘッダー ファイル\interfaces">
-      <UniqueIdentifier>{a766bc72-8b02-45a5-a4f2-dec96ecd2641}</UniqueIdentifier>
+      <UniqueIdentifier>{113d689e-5ae7-43e2-a0d7-2031f1e1c757}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -24,6 +24,9 @@
     <ClCompile Include="src\d3d12_helpers.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="src\fence_context.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
     <ClCompile Include="src\gpu_context.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
@@ -31,9 +34,6 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="src\render_target_context.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="src\fence_context.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="src\window_d3d12_facade.cpp">
@@ -47,7 +47,11 @@
     <ClInclude Include="include\dll_config.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="plugin.h" />
     <ClInclude Include="include\d3d12_helpers.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="include\fence_context.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="include\gpu_context.h">
@@ -56,30 +60,29 @@
     <ClInclude Include="include\gpu_facade.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="include\interfaces\render_target_context.h">
-      <Filter>ヘッダー ファイル\interfaces</Filter>
-    </ClInclude>
     <ClInclude Include="include\render_target_context.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="include\interfaces\swap_chain_context.h">
-      <Filter>ヘッダー ファイル\interfaces</Filter>
-    </ClInclude>
     <ClInclude Include="include\swap_chain_context.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="include\window_d3d12_facade.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="include\interfaces\fence_context.h">
       <Filter>ヘッダー ファイル\interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="include\fence_context.h">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="include\interfaces\render_target_context.h">
+      <Filter>ヘッダー ファイル\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="include\interfaces\swap_chain_context.h">
+      <Filter>ヘッダー ファイル\interfaces</Filter>
     </ClInclude>
     <ClInclude Include="include\interfaces\window_d3d12_facade.h">
       <Filter>ヘッダー ファイル\interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="include\window_d3d12_facade.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="plugin.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
   </ItemGroup>
 </Project>

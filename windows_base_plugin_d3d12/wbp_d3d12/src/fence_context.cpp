@@ -1,7 +1,7 @@
-﻿#include "windows_base_plugin_d3d12/src/pch.h"
-#include "windows_base_plugin_d3d12/include/fence_context.h"
+﻿#include "wbp_d3d12/src/pch.h"
+#include "wbp_d3d12/include/fence_context.h"
 
-#include "windows_base_plugin_d3d12/include/d3d12_helpers.h"
+#include "wbp_d3d12/include/d3d12_helpers.h"
 
 wbp_d3d12::FenceContext::~FenceContext()
 {

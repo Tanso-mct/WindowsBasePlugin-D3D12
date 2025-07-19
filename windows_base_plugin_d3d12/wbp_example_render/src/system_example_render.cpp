@@ -1,8 +1,8 @@
 ﻿#include "wbp_example_render/src/pch.h"
 #include "wbp_example_render/include/system_example_render.h"
 
-#include "windows_base_plugin_d3d12/plugin.h"
-#pragma comment(lib, "windows_base_plugin_d3d12.lib")
+#include "wbp_d3d12/plugin.h"
+#pragma comment(lib, "wbp_d3d12.lib")
 
 const WBP_EXAMPLE_RENDER_API size_t &wbp_example_render::ExampleRenderSystemID()
 {

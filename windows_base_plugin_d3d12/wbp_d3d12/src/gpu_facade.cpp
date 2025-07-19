@@ -1,9 +1,9 @@
-﻿#include "windows_base_plugin_d3d12/src/pch.h"
-#include "windows_base_plugin_d3d12/include/gpu_facade.h"
+﻿#include "wbp_d3d12/src/pch.h"
+#include "wbp_d3d12/include/gpu_facade.h"
 
 #pragma comment(lib, "windows_base.lib")
 
-#include "windows_base_plugin_d3d12/include/d3d12_helpers.h"
+#include "wbp_d3d12/include/d3d12_helpers.h"
 
 WBP_D3D12_API const size_t &wbp_d3d12::GPUFacadeID()
 {

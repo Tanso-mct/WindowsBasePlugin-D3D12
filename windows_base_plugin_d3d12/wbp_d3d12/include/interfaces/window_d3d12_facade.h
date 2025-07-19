@@ -2,9 +2,9 @@
 
 #include <d3d12.h>
 
-#include "windows_base_plugin_d3d12/include/interfaces/swap_chain_context.h"
-#include "windows_base_plugin_d3d12/include/interfaces/render_target_context.h"
-#include "windows_base_plugin_d3d12/include/interfaces/fence_context.h"
+#include "wbp_d3d12/include/interfaces/swap_chain_context.h"
+#include "wbp_d3d12/include/interfaces/render_target_context.h"
+#include "wbp_d3d12/include/interfaces/fence_context.h"
 
 namespace wbp_d3d12
 {

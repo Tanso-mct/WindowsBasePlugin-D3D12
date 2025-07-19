@@ -1,8 +1,8 @@
 ﻿#pragma once
 #include "windows_base/windows_base.h"
-#include "windows_base_plugin_d3d12/include/dll_config.h"
+#include "wbp_d3d12/include/dll_config.h"
 
-#include "windows_base_plugin_d3d12/include/gpu_context.h"
+#include "wbp_d3d12/include/gpu_context.h"
 
 namespace wbp_d3d12
 {

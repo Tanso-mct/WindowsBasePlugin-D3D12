@@ -1,5 +1,5 @@
-﻿#include "windows_base_plugin_d3d12/src/pch.h"
-#include "windows_base_plugin_d3d12/include/render_target_context.h"
+﻿#include "wbp_d3d12/src/pch.h"
+#include "wbp_d3d12/include/render_target_context.h"
 
 void wbp_d3d12::RenderTargetContext::Resize()
 {

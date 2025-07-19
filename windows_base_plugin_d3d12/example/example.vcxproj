@@ -168,14 +168,14 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\wbp_d3d12\wbp_d3d12.vcxproj">
+      <Project>{580b6b50-f7c4-4191-9543-c21d0bdabacf}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\wbp_example_render\wbp_example_render.vcxproj">
       <Project>{f25619ba-ade3-4595-85d0-60e8a937b01a}</Project>
     </ProjectReference>
     <ProjectReference Include="..\windows_base\windows_base.vcxproj">
       <Project>{060ef2ce-203c-4ecc-bed7-5d4ffdb963fc}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\windows_base_plugin_d3d12\windows_base_plugin_d3d12.vcxproj">
-      <Project>{106f5cee-c641-46c1-821b-498ecd0a9860}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

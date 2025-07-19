@@ -1,7 +1,7 @@
 ﻿#pragma once
-#include "windows_base_plugin_d3d12/include/dll_config.h"
+#include "wbp_d3d12/include/dll_config.h"
 
-#include "windows_base_plugin_d3d12/include/interfaces/swap_chain_context.h"
+#include "wbp_d3d12/include/interfaces/swap_chain_context.h"
 
 namespace wbp_d3d12
 {

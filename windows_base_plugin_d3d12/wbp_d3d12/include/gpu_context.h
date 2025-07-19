@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "windows_base_plugin_d3d12/include/dll_config.h"
+#include "wbp_d3d12/include/dll_config.h"
 
 #include <d3d12.h>
 #include <dxgi1_6.h>

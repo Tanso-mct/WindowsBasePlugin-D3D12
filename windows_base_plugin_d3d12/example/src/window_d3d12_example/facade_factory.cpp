@@ -4,8 +4,8 @@
 #include "example/include/window_d3d12_example/monitor_keyboard.h"
 #include "example/include/window_d3d12_example/monitor_mouse.h"
 
-#include "windows_base_plugin_d3d12/plugin.h"
-#pragma comment(lib, "windows_base_plugin_d3d12.lib")
+#include "wbp_d3d12/plugin.h"
+#pragma comment(lib, "wbp_d3d12.lib")
 
 std::unique_ptr<wb::IWindowFacade> example::D3D12ExampleWindowFacadeFactory::Create() const
 {
