@@ -8,6 +8,12 @@
     <ClCompile Include="gpu_test.cpp">
       <Filter>tests</Filter>
     </ClCompile>
+    <ClCompile Include="render_target_context_test.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
+    <ClCompile Include="swap_chain_context_test.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
