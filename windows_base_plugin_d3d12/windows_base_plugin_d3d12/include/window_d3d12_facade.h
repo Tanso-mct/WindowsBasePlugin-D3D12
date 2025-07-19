@@ -55,7 +55,7 @@ namespace wbp_d3d12
         virtual ID3D12CommandAllocator *GetCommandAllocator() override;
         virtual ID3D12GraphicsCommandList *GetCommandList() override;
 
-        virtual void ClearViews(const float (&clearColor)[4]) override;
+        virtual void ClearViews(const float (&clearColor)[4], UINT depthStencilIndex) override;
         virtual void Present() override;
 
         virtual void WaitForGPU() override;

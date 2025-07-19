@@ -6,8 +6,6 @@ namespace example
     constexpr UINT RENDER_TARGET_COUNT = 2;
     constexpr UINT DEPTH_STENCIL_COUNT = 1;
 
-    constexpr UINT DEPTH_STENCIL_FOR_DRAW = 0;
-
     class D3D12ExampleWindowFacadeFactory : public wb::IWindowFacadeFactory
     {
     public:

@@ -80,5 +80,6 @@
     <ClInclude Include="include\window_d3d12_facade.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="plugin.h" />
   </ItemGroup>
 </Project>

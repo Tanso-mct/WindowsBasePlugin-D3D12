@@ -838,7 +838,7 @@ ID3D12GraphicsCommandList *wbp_d3d12::WindowD3D12Facade::GetCommandList()
     return renderTargetContext_->GetCommandLists()[swapChainContext_->GetFrameIndex()].Get();
 }
 
-void wbp_d3d12::WindowD3D12Facade::ClearViews(const float (&clearColor)[4])
+void wbp_d3d12::WindowD3D12Facade::ClearViews(const float (&clearColor)[4], UINT depthStencilIndex)
 {
     if (!context_->IsCreated())
     {
@@ -865,7 +865,7 @@ void wbp_d3d12::WindowD3D12Facade::ClearViews(const float (&clearColor)[4])
     (
         renderTargetContext_->GetCommandLists()[swapChainContext_->GetFrameIndex()],
         renderTargetContext_->GetDsvDescriptorHeap(),
-        swapChainContext_->GetFrameIndex(), renderTargetContext_->GetDsvDescriptorSize(),
+        depthStencilIndex, renderTargetContext_->GetDsvDescriptorSize(),
         renderTargetContext_->GetScissorRect()
     );
 }

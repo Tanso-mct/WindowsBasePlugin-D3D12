@@ -199,7 +199,7 @@ TEST(WindowD3D12Facade, ClearAndPresent)
 
         // Create a clear color
         const float clearColor[4] = { 1.0f, 0.0f, 0.0f, 1.0f };
-        d3d12WindowFacade->ClearViews(clearColor);
+        d3d12WindowFacade->ClearViews(clearColor, DEPTH_STENCIL_FOR_DRAW);
 
         d3d12WindowFacade->SetBarrierToPresent();
         d3d12WindowFacade->CloseCommand();

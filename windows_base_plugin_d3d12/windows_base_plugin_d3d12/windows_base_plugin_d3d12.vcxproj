@@ -165,6 +165,7 @@
     <ClInclude Include="include\render_target_context.h" />
     <ClInclude Include="include\swap_chain_context.h" />
     <ClInclude Include="include\window_d3d12_facade.h" />
+    <ClInclude Include="plugin.h" />
     <ClInclude Include="src\pch.h" />
   </ItemGroup>
   <ItemGroup>
