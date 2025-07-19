@@ -2,8 +2,8 @@
 
 #pragma comment(lib, "windows_base.lib")
 
-#include "windows_base_plugin_d3d12/include/gpu_facade.h"
-#pragma comment(lib, "windows_base_plugin_d3d12.lib")
+#include "wbp_d3d12/include/gpu_facade.h"
+#pragma comment(lib, "wbp_d3d12.lib")
 
 TEST(GPUFacade, Create)
 {

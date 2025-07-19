@@ -5,8 +5,6 @@ VisualStudioVersion = 17.14.36310.24
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "windows_base", "windows_base\windows_base.vcxproj", "{060EF2CE-203C-4ECC-BED7-5D4FFDB963FC}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "windows_base_plugin_d3d12_test", "windows_base_plugin_d3d12_test\windows_base_plugin_d3d12_test.vcxproj", "{01BFF09A-8526-4A4C-918B-2DBF05E6392D}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "example", "example\example.vcxproj", "{9E932016-49CC-4F1C-A620-E041F38F3B2E}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wbp_example_render", "wbp_example_render\wbp_example_render.vcxproj", "{F25619BA-ADE3-4595-85D0-60E8A937B01A}"
@@ -31,14 +29,6 @@ Global
 		{060EF2CE-203C-4ECC-BED7-5D4FFDB963FC}.Release|x64.Build.0 = Release|x64
 		{060EF2CE-203C-4ECC-BED7-5D4FFDB963FC}.Release|x86.ActiveCfg = Release|Win32
 		{060EF2CE-203C-4ECC-BED7-5D4FFDB963FC}.Release|x86.Build.0 = Release|Win32
-		{01BFF09A-8526-4A4C-918B-2DBF05E6392D}.Debug|x64.ActiveCfg = Debug|x64
-		{01BFF09A-8526-4A4C-918B-2DBF05E6392D}.Debug|x64.Build.0 = Debug|x64
-		{01BFF09A-8526-4A4C-918B-2DBF05E6392D}.Debug|x86.ActiveCfg = Debug|Win32
-		{01BFF09A-8526-4A4C-918B-2DBF05E6392D}.Debug|x86.Build.0 = Debug|Win32
-		{01BFF09A-8526-4A4C-918B-2DBF05E6392D}.Release|x64.ActiveCfg = Release|x64
-		{01BFF09A-8526-4A4C-918B-2DBF05E6392D}.Release|x64.Build.0 = Release|x64
-		{01BFF09A-8526-4A4C-918B-2DBF05E6392D}.Release|x86.ActiveCfg = Release|Win32
-		{01BFF09A-8526-4A4C-918B-2DBF05E6392D}.Release|x86.Build.0 = Release|Win32
 		{9E932016-49CC-4F1C-A620-E041F38F3B2E}.Debug|x64.ActiveCfg = Debug|x64
 		{9E932016-49CC-4F1C-A620-E041F38F3B2E}.Debug|x64.Build.0 = Debug|x64
 		{9E932016-49CC-4F1C-A620-E041F38F3B2E}.Debug|x86.ActiveCfg = Debug|Win32

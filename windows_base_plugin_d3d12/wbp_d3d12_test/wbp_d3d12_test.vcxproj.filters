@@ -5,6 +5,9 @@
     <ClCompile Include="d3d12_helpers_test.cpp">
       <Filter>tests</Filter>
     </ClCompile>
+    <ClCompile Include="fence_context_test.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
     <ClCompile Include="gpu_test.cpp">
       <Filter>tests</Filter>
     </ClCompile>
@@ -12,9 +15,6 @@
       <Filter>tests</Filter>
     </ClCompile>
     <ClCompile Include="swap_chain_context_test.cpp">
-      <Filter>tests</Filter>
-    </ClCompile>
-    <ClCompile Include="fence_context_test.cpp">
       <Filter>tests</Filter>
     </ClCompile>
     <ClCompile Include="window_d3d12_test.cpp">
@@ -25,11 +25,8 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Filter Include="tests">
-      <UniqueIdentifier>{07c87ef3-a60b-4906-af9a-d62c98a33e31}</UniqueIdentifier>
+      <UniqueIdentifier>{15249414-5e55-4fd7-a360-9dfb0a246071}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
