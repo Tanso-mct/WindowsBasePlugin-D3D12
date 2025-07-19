@@ -3,5 +3,8 @@
     "commentTranslate.targetLanguage": "en",
     "files.associations": {
         "xstring": "cpp"
-    }
+    },
+    "cSpell.words": [
+        "IGPU"
+    ]
 }

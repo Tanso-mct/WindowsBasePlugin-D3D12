@@ -1,6 +1,8 @@
 ﻿#include "windows_base_plugin_d3d12/src/pch.h"
 #include "windows_base_plugin_d3d12/include/d3d12_helpers.h"
 
+#pragma comment(lib, "windows_base.lib")
+
 using Microsoft::WRL::ComPtr;
 
 #include "directx12_helper/include/d3dx12.h"
