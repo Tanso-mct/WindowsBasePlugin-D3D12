@@ -570,6 +570,7 @@ void wb::SceneUpdator::UpdateCurrentScene(ContainerStorage &contStorage)
 
     // Get the current update time
     currentUpdateTime_ = std::chrono::high_resolution_clock::now();
+    lastUpdateTime_ = currentUpdateTime_;
 
     // Calculate the delta time
     std::chrono::duration<double> deltaTime = currentUpdateTime_ - lastUpdateTime_;
