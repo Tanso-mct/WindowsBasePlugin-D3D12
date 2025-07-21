@@ -42,7 +42,7 @@ namespace
             }
 
             {
-                wbp_d3d12::ID3D12WindowFacade *d3d12WindowFacade = wb::As<wbp_d3d12::ID3D12WindowFacade>(facade.get());
+                wbp_d3d12::IWindowD3D12Facade *d3d12WindowFacade = wb::As<wbp_d3d12::IWindowD3D12Facade>(facade.get());
                 
                 std::unique_ptr<wbp_d3d12::ISwapChainContext> swapChainContext = std::make_unique<wbp_d3d12::SwapChainContext>();
                 d3d12WindowFacade->SetSwapChainContext(std::move(swapChainContext));
@@ -191,7 +191,7 @@ TEST(WindowD3D12Facade, ClearAndPresent)
 
     {
         // Get the D3D12WindowFacade interface
-        wbp_d3d12::ID3D12WindowFacade *d3d12WindowFacade = wb::As<wbp_d3d12::ID3D12WindowFacade>(windowFacade.get());
+        wbp_d3d12::IWindowD3D12Facade *d3d12WindowFacade = wb::As<wbp_d3d12::IWindowD3D12Facade>(windowFacade.get());
         
         d3d12WindowFacade->ResetCommand(nullptr);
         d3d12WindowFacade->SetBarrierToRenderTarget();

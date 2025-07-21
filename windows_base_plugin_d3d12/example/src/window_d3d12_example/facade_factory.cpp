@@ -20,7 +20,7 @@ std::unique_ptr<wb::IWindowFacade> example::D3D12ExampleWindowFacadeFactory::Cre
     }
 
     {
-        wbp_d3d12::ID3D12WindowFacade *d3d12WindowFacade = wb::As<wbp_d3d12::ID3D12WindowFacade>(facade.get());
+        wbp_d3d12::IWindowD3D12Facade *d3d12WindowFacade = wb::As<wbp_d3d12::IWindowD3D12Facade>(facade.get());
         
         std::unique_ptr<wbp_d3d12::ISwapChainContext> swapChainContext = std::make_unique<wbp_d3d12::SwapChainContext>();
         d3d12WindowFacade->SetSwapChainContext(std::move(swapChainContext));

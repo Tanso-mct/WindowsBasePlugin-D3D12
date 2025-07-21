@@ -35,7 +35,7 @@ void wbp_example_render::ExampleRenderSystem::Update(const wb::SystemArgument &a
     wb::IWindowFacade &window = windowContainer.Get(args.belongWindowID_);
 
     // Get the D3D12WindowFacade interface
-    wbp_d3d12::ID3D12WindowFacade *d3d12WindowFacade = wb::As<wbp_d3d12::ID3D12WindowFacade>(&window);
+    wbp_d3d12::IWindowD3D12Facade *d3d12WindowFacade = wb::As<wbp_d3d12::IWindowD3D12Facade>(&window);
     if (d3d12WindowFacade == nullptr)
     {
         // Skip if the window is not a D3D12 window
