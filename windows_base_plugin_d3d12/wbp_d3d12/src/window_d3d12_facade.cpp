@@ -844,6 +844,24 @@ ID3D12GraphicsCommandList *wbp_d3d12::WindowD3D12Facade::GetCommandList()
     return renderTargetContext_->GetCommandLists()[swapChainContext_->GetFrameIndex()].Get();
 }
 
+const size_t &wbp_d3d12::WindowD3D12Facade::GetCurrentFrameIndex() const
+{
+    if (!context_->IsCreated())
+    {
+        std::string err = wb::CreateErrorMessage
+        (
+            __FILE__, __LINE__, __FUNCTION__,
+            {"Window is not created."}
+        );
+
+        wb::ConsoleLogErr(err);
+        wb::ErrorNotify("WINDOWS_BASE", err);
+        wb::ThrowRuntimeError(err);
+    }
+
+    return swapChainContext_->GetFrameIndex();
+}
+
 void wbp_d3d12::WindowD3D12Facade::ClearViews(const float (&clearColor)[4], UINT depthStencilIndex)
 {
     if (!context_->IsCreated())
